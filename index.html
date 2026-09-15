@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Video Tools - Free Online Video Tools</title>
+
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,sans-serif;
+  background:#0f172a;
+  color:white;
+  min-height:100vh;
+}
+
+header{
+  padding:20px;
+  text-align:center;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+}
+
+.hero{
+  max-width:700px;
+  margin:70px auto;
+  padding:20px;
+  text-align:center;
+}
+
+h1{
+  font-size:42px;
+  margin-bottom:15px;
+}
+
+p{
+  color:#cbd5e1;
+  line-height:1.6;
+}
+
+.box{
+  background:#1e293b;
+  padding:25px;
+  border-radius:18px;
+  margin-top:30px;
+}
+
+input{
+  width:100%;
+  padding:16px;
+  border-radius:10px;
+  border:none;
+  outline:none;
+  font-size:16px;
+  margin-bottom:12px;
+}
+
+button{
+  width:100%;
+  padding:16px;
+  border:none;
+  border-radius:10px;
+  background:#22c55e;
+  color:white;
+  font-size:17px;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+button:hover{
+  background:#16a34a;
+}
+
+.notice{
+  margin-top:18px;
+  font-size:13px;
+  color:#94a3b8;
+}
+
+footer{
+  text-align:center;
+  padding:30px;
+  color:#94a3b8;
+  font-size:13px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">🎬 Video Tools</div>
+</header>
+
+<section class="hero">
+
+<h1>Free Online Video Tools</h1>
+
+<p>
+Easy and fast video tools for your everyday needs.
+</p>
+
+<div class="box">
+
+<input
+type="url"
+placeholder="Paste your video URL here"
+id="url">
+
+<button onclick="analyzeVideo()">
+Analyze Video
+</button>
+
+<div class="notice" id="message">
+Use this tool only with videos you own or have permission to download.
+</div>
+
+</div>
+
+</section>
+
+<footer>
+© 2026 Video Tools • Privacy Policy • Terms
+</footer>
+
+<script>
+function analyzeVideo(){
+
+  const url = document.getElementById("url").value;
+  const message = document.getElementById("message");
+
+  if(!url){
+    message.innerText = "Please enter a video URL.";
+    return;
+  }
+
+  message.innerText =
+  "URL received. Download options will be available for supported content.";
+}
+</script>
+
+</body>
+</html>
