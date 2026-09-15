@@ -1,237 +1,175 @@
-
-  <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Tools - Free Online Video Tools</title>
-
-<meta name="description" content="Fast and simple online video tools. Analyze and work with videos you own or have permission to use.">
-<meta name="robots" content="index, follow">
+<title>VideoTools - Free MP4 Downloader</title>
+<meta name="description" content="Download authorized MP4 videos online quickly and easily.">
 
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-  font-family:Arial,Helvetica,sans-serif;
-  background:#08111f;
-  color:#ffffff;
-  line-height:1.6;
+font-family:Arial,Helvetica,sans-serif;
+background:#07111f;
+color:white;
+min-height:100vh;
 }
 
 header{
-  width:100%;
-  padding:18px 20px;
-  border-bottom:1px solid #1e293b;
-  background:#0b1627;
+padding:18px 20px;
+border-bottom:1px solid #1d3047;
+background:#0b1627;
 }
 
-.nav{
-  max-width:1100px;
-  margin:auto;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+nav{
+max-width:900px;
+margin:auto;
+display:flex;
+justify-content:space-between;
+align-items:center;
 }
 
 .logo{
-  font-size:22px;
-  font-weight:bold;
+font-size:22px;
+font-weight:bold;
 }
 
-.logo span{
-  color:#22c55e;
-}
+.logo span{color:#22c55e}
 
 nav a{
-  color:#cbd5e1;
-  text-decoration:none;
-  margin-left:18px;
-  font-size:14px;
+color:#cbd5e1;
+text-decoration:none;
+margin-left:18px;
+font-size:14px;
 }
 
 .hero{
-  max-width:850px;
-  margin:0 auto;
-  padding:75px 20px 55px;
-  text-align:center;
+max-width:850px;
+margin:auto;
+padding:75px 20px 30px;
+text-align:center;
 }
 
 .badge{
-  display:inline-block;
-  background:#123524;
-  color:#4ade80;
-  padding:7px 14px;
-  border-radius:30px;
-  font-size:13px;
-  margin-bottom:20px;
+display:inline-block;
+background:#123524;
+color:#86efac;
+padding:9px 16px;
+border-radius:30px;
+font-size:13px;
+margin-bottom:20px;
 }
 
 h1{
-  font-size:46px;
-  line-height:1.15;
-  margin-bottom:18px;
+font-size:46px;
+line-height:1.15;
+margin-bottom:18px;
 }
 
 .subtitle{
-  color:#94a3b8;
-  font-size:17px;
-  max-width:650px;
-  margin:auto;
+color:#aebdce;
+font-size:17px;
+line-height:1.6;
+max-width:650px;
+margin:auto;
 }
 
-.tool-box{
-  max-width:650px;
-  margin:35px auto 0;
-  padding:25px;
-  background:#111e31;
-  border:1px solid #26364d;
-  border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,.25);
+.box{
+max-width:720px;
+margin:35px auto;
+background:#0d1b2e;
+border:1px solid #243b56;
+border-radius:18px;
+padding:25px;
+box-shadow:0 15px 40px rgba(0,0,0,.25);
 }
 
 input{
-  width:100%;
-  padding:17px;
-  border:1px solid #334155;
-  background:#ffffff;
-  color:#111827;
-  border-radius:12px;
-  outline:none;
-  font-size:16px;
+width:100%;
+padding:16px;
+border-radius:10px;
+border:1px solid #344b66;
+background:#07111f;
+color:white;
+font-size:15px;
+outline:none;
+margin-bottom:14px;
 }
 
 button{
-  width:100%;
-  padding:17px;
-  margin-top:12px;
-  border:0;
-  border-radius:12px;
-  background:#22c55e;
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
+width:100%;
+padding:16px;
+border:0;
+border-radius:10px;
+background:#22c55e;
+color:#06120b;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
 }
 
-button:hover{
-  background:#16a34a;
+button:disabled{
+opacity:.6;
 }
 
-#message{
-  color:#94a3b8;
-  font-size:13px;
-  margin-top:15px;
+#result{
+margin-top:18px;
+padding:14px;
+border-radius:10px;
+display:none;
+line-height:1.5;
+}
+
+.success{
+background:#123d29;
+color:#86efac;
+}
+
+.error{
+background:#401c24;
+color:#fca5a5;
 }
 
 .features{
-  max-width:1050px;
-  margin:20px auto;
-  padding:30px 20px 70px;
-}
-
-.section-title{
-  text-align:center;
-  font-size:30px;
-  margin-bottom:30px;
-}
-
-.cards{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:18px;
+max-width:900px;
+margin:40px auto;
+padding:20px;
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:15px;
 }
 
 .card{
-  background:#111e31;
-  border:1px solid #26364d;
-  padding:25px;
-  border-radius:16px;
-}
-
-.card-icon{
-  font-size:30px;
-  margin-bottom:12px;
+background:#0d1b2e;
+border:1px solid #243b56;
+border-radius:14px;
+padding:22px;
 }
 
 .card h3{
-  margin-bottom:8px;
+margin-bottom:8px;
 }
 
 .card p{
-  color:#94a3b8;
-  font-size:14px;
-}
-
-.faq{
-  max-width:850px;
-  margin:auto;
-  padding:20px 20px 70px;
-}
-
-details{
-  background:#111e31;
-  border:1px solid #26364d;
-  border-radius:12px;
-  margin-bottom:12px;
-  padding:16px 18px;
-}
-
-summary{
-  cursor:pointer;
-  font-weight:bold;
-}
-
-details p{
-  color:#94a3b8;
-  margin-top:10px;
-  font-size:14px;
+color:#9fb0c3;
+font-size:14px;
+line-height:1.5;
 }
 
 footer{
-  border-top:1px solid #1e293b;
-  padding:30px 20px;
-  text-align:center;
-  color:#64748b;
-  font-size:13px;
-}
-
-.footer-links{
-  margin-top:8px;
-}
-
-.footer-links a{
-  color:#94a3b8;
-  text-decoration:none;
-  margin:0 7px;
+text-align:center;
+padding:35px 20px;
+color:#71839a;
+font-size:13px;
+border-top:1px solid #1d3047;
+margin-top:40px;
 }
 
 @media(max-width:700px){
-
-  nav{
-    display:none;
-  }
-
-  h1{
-    font-size:36px;
-  }
-
-  .hero{
-    padding-top:55px;
-  }
-
-  .cards{
-    grid-template-columns:1fr;
-  }
-
-  .tool-box{
-    padding:18px;
-  }
+h1{font-size:34px}
+.features{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -239,172 +177,169 @@ footer{
 <body>
 
 <header>
-  <div class="nav">
+<nav>
+<div class="logo">🎬 Video<span>Tools</span></div>
 
-    <div class="logo">
-      🎬 <span>Video</span>Tools
-    </div>
-
-    <nav>
-      <a href="#tools">Tools</a>
-      <a href="#faq">FAQ</a>
-    </nav>
-
-  </div>
+<div>
+<a href="index.html">Home</a>
+<a href="privacy.html">Privacy</a>
+</div>
+</nav>
 </header>
-
 
 <section class="hero">
 
-  <div class="badge">
-    ⚡ Fast & Simple Online Tools
-  </div>
+<div class="badge">⚡ Fast & Simple MP4 Downloader</div>
 
-  <h1>
-    Free Online<br>
-    Video Tools
-  </h1>
+<h1>Download MP4 Videos</h1>
 
-  <p class="subtitle">
-    Simple and convenient tools for working with video content.
-    Use only content that you own or have permission to use.
-  </p>
+<p class="subtitle">
+Paste a direct video URL below and download authorized video content
+in MP4 format.
+</p>
 
+<div class="box">
 
-  <div class="tool-box" id="tools">
+<input
+id="videoUrl"
+type="url"
+placeholder="Paste direct MP4 video URL here..."
+autocomplete="off">
 
-    <input
-      type="url"
-      id="videoUrl"
-      placeholder="Paste your video URL here"
-      autocomplete="off"
-    >
+<button id="downloadBtn" onclick="downloadVideo()">
+⬇️ Download MP4
+</button>
 
-    <button onclick="analyzeVideo()">
-      🔍 Analyze Video
-    </button>
+<div id="result"></div>
 
-    <div id="message">
-      Enter a video URL to get started.
-    </div>
-
-  </div>
+</div>
 
 </section>
-
 
 <section class="features">
 
-  <h2 class="section-title">
-    Why Use VideoTools?
-  </h2>
+<div class="card">
+<h3>⚡ Fast</h3>
+<p>Simple interface designed for quick video downloads.</p>
+</div>
 
-  <div class="cards">
+<div class="card">
+<h3>📱 Mobile Friendly</h3>
+<p>Works with phones, tablets and desktop browsers.</p>
+</div>
 
-    <div class="card">
-      <div class="card-icon">⚡</div>
-      <h3>Fast & Simple</h3>
-      <p>
-        Clean and easy interface designed for quick access on mobile and desktop.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">📱</div>
-      <h3>Mobile Friendly</h3>
-      <p>
-        Use the website comfortably on smartphones, tablets and computers.
-      </p>
-    </div>
-
-    <div class="card">
-      <div class="card-icon">🔒</div>
-      <h3>Responsible Use</h3>
-      <p>
-        Only use tools with videos and content you are authorized to download or process.
-      </p>
-    </div>
-
-  </div>
+<div class="card">
+<h3>🔒 Authorized Content</h3>
+<p>Use the tool only with videos you own or have permission to download.</p>
+</div>
 
 </section>
-
-
-<section class="faq" id="faq">
-
-  <h2 class="section-title">
-    Frequently Asked Questions
-  </h2>
-
-  <details>
-    <summary>What is VideoTools?</summary>
-    <p>
-      VideoTools is an online collection of simple tools for working with video content.
-    </p>
-  </details>
-
-  <details>
-    <summary>Can I use it on my phone?</summary>
-    <p>
-      Yes. The website is designed to work on Android, iPhone, tablets and computers.
-    </p>
-  </details>
-
-  <details>
-    <summary>Can I download any video?</summary>
-    <p>
-      You should only download or process videos when you own the content or have permission
-      from the copyright owner and the platform's rules allow it.
-    </p>
-  </details>
-
-</section>
-
 
 <footer>
-
-  © 2026 VideoTools. All rights reserved.
-
-  <div class="footer-links">
-    <a href="#">Privacy Policy</a>
-    <a href="#">Terms</a>
-    <a href="#">Contact</a>
-  </div>
-
+© 2026 VideoTools. All rights reserved.
 </footer>
-
 
 <script>
 
-function analyzeVideo(){
+const API =
+"https://video-tools-api-2026.dharmeshtal85.workers.dev";
 
-  const url =
-    document.getElementById("videoUrl").value.trim();
+async function downloadVideo(){
 
-  const message =
-    document.getElementById("message");
+const input = document.getElementById("videoUrl");
+const button = document.getElementById("downloadBtn");
+const result = document.getElementById("result");
 
-  if(!url){
+const videoUrl = input.value.trim();
 
-    message.innerText =
-      "⚠️ Please enter a video URL.";
+result.style.display = "none";
+result.className = "";
 
-    return;
-  }
+if(!videoUrl){
 
-  try{
+showResult("Please paste a video URL first.","error");
+return;
 
-    new URL(url);
+}
 
-    message.innerText =
-      "✅ URL received. This demo currently supports authorized video content only.";
+try{
 
-  }catch(e){
+new URL(videoUrl);
 
-    message.innerText =
-      "⚠️ Please enter a valid URL.";
+}catch(e){
 
-  }
+showResult("Please enter a valid video URL.","error");
+return;
+
+}
+
+button.disabled = true;
+button.textContent = "⏳ Processing...";
+
+try{
+
+const downloadUrl =
+API + "/download?url=" + encodeURIComponent(videoUrl);
+
+const response = await fetch(downloadUrl);
+
+if(!response.ok){
+
+throw new Error("Download request failed");
+
+}
+
+const blob = await response.blob();
+
+if(blob.size === 0){
+
+throw new Error("Empty video received");
+
+}
+
+const blobUrl = URL.createObjectURL(blob);
+
+const link = document.createElement("a");
+
+link.href = blobUrl;
+link.download = "video-download.mp4";
+
+document.body.appendChild(link);
+link.click();
+link.remove();
+
+setTimeout(()=>{
+URL.revokeObjectURL(blobUrl);
+},1000);
+
+showResult(
+"✅ Video ready! Your MP4 download should start now.",
+"success"
+);
+
+}catch(error){
+
+console.error(error);
+
+showResult(
+"❌ Video could not be downloaded. Make sure the URL is a direct MP4/video URL.",
+"error"
+);
+
+}
+
+button.disabled = false;
+button.textContent = "⬇️ Download MP4";
+
+}
+
+function showResult(message,type){
+
+const result = document.getElementById("result");
+
+result.textContent = message;
+result.className = type;
+result.style.display = "block";
 
 }
 
